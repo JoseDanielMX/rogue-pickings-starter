@@ -13,9 +13,12 @@ body {
 }
 
 .container{
-	max-width: 100%;
-	margin: 0 auto;
-	padding: 0 1em;
+	align-items: center;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	max-width: 1200px;
+	width: 90%;
 }
 
 h1,
@@ -46,28 +49,26 @@ p {
 }
 
 /***** HEADER *****/
-/*The widths are in a percentage!*/
 header {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
 	height: auto;
 	border-bottom: 3px solid #77a466;
-	margin: 0 auto;
-	width: 100%;
+	flex-basis: 100%;
 }
-
 header h1 {
 	margin: 0;
 	padding: 38px 0;
-	text-align: center;
 }
 header h1 span {
 	color: #77a466;
 }
-
 header nav {
 	border-top: 3px solid #77a466;
-	display: flex;
-	justify-content: center;
 	padding: 26px 0;
+	text-align: center;
+	width: 100%;
 }
 header nav ul {
 	margin: 0;
@@ -86,17 +87,17 @@ header nav ul li a{
 }
 
 /***** TOP SECTION *****/
-/*The widths are in a percentage!*/
 .top-section,
 .bottom-section {
-	margin: 0 auto;
-	clear: both;
+	align-items: flex-start;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
 	width: 100%;
 }
 
 .main-image {
 	height: auto;
-	float: left;
 }
 .main-image img {
 	width: 100%;
@@ -105,10 +106,8 @@ header nav ul li a{
 
 .main-title {
 	height: auto;
-	float: left;
 }
 .main-title h3 {
-	text-align: left;
 	padding: 5px 0;
 	color: #77a466;
 }
@@ -122,10 +121,8 @@ header nav ul li a{
 .section-one,
 .section-two,
 .section-three {
-	width: 100%;
-	height: auto;
-	float: left;
 	border-top: 1px solid #eee;
+	width: 100%;
 }
 
 .section-one h4,
@@ -155,13 +152,12 @@ header nav ul li a{
 }
 
 /***** FOOTER *****/
-/*The widths are in a percentage!*/
 footer {
+	align-items: center;
+	display: flex;
 	height: 50px;
+	justify-content: center;
 	border-top: 3px solid #eee;
-	margin: 0 auto;
-	clear: both;
-	text-align: center;
 	width: 100%;
 }
 footer span {
@@ -174,6 +170,9 @@ footer span {
 /***** TABLET *****/
 
 @media (min-width: 768px) {
+	.bottom-section {
+		flex-direction: row;
+		}
 	.section-one,
 	.section-two,
 	.section-three {
@@ -195,23 +194,23 @@ footer span {
 
 @media (min-width: 1200px) {
 	header {
-		height: 110px;
-	}
-	header h1 {
-		float: left;
+		flex-flow: row;
+		justify-content: space-between;
 	}
 	header nav {
 		border-top: none;
-		float: right;
 		padding: 46px 0;
+		width: auto;
+	}
+	header nav ul {
+		display: flex;
+		justify-content: space-between;
 	}
 	header nav ul li {
 		padding: 0 10px;
-		display: inline;
 	}
-	.container{
-		max-width: 1200px;
-		margin: 0 auto;
+	.bottom-section {
+	flex-direction: row;
 	}
 	.section-one,
 	.section-two,
